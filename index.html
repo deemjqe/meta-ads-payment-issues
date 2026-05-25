@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Рейтинг основных причин проблем с оплатой Meta Ads по обсуждениям в интернете и справочным материалам Meta.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Meta Ads: причины проблем с оплатой">
+  <meta property="og:description" content="Частотный рейтинг причин payment failed, card declined и billing disabled в Meta Ads.">
+  <meta property="og:type" content="website">
+  <title>Meta Ads: причины проблем с оплатой</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --paper: #ffffff;
+      --ink: #121826;
+      --muted: #647084;
+      --line: #dfe5ef;
+      --accent: #1769e0;
+      --accent-dark: #0d3f8f;
+      --accent-soft: #e8f1ff;
+      --green: #11845b;
+      --green-soft: #e8f7f0;
+      --yellow: #946200;
+      --yellow-soft: #fff4d8;
+      --red: #b42318;
+      --red-soft: #ffebe8;
+      --radius: 20px;
+      --shadow: 0 18px 60px rgba(18, 24, 38, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(23, 105, 224, 0.14), transparent 32rem),
+        linear-gradient(180deg, #fbfcff 0%, var(--bg) 40%, #eef2f8 100%);
+      line-height: 1.55;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover {
+      color: var(--accent-dark);
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 72px;
+    }
+
+    .hero {
+      display: grid;
+      gap: 28px;
+      align-items: center;
+      padding: 42px;
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      border-radius: 32px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.76)),
+        radial-gradient(circle at top right, rgba(23, 105, 224, 0.16), transparent 24rem);
+      box-shadow: var(--shadow);
+    }
+
+    @media (min-width: 840px) {
+      .hero {
+        grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.55fr);
+      }
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border: 1px solid #cddcf4;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+    }
+
+    h1 {
+      max-width: 860px;
+      margin-top: 18px;
+      font-size: clamp(2.35rem, 7vw, 5.15rem);
+    }
+
+    h2 {
+      font-size: clamp(1.55rem, 4vw, 2.45rem);
+    }
+
+    h3 {
+      font-size: 1.05rem;
+    }
+
+    .lead {
+      max-width: 790px;
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.02rem, 2vw, 1.25rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 16px;
+      border: 1px solid var(--accent);
+      border-radius: 12px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .button.secondary {
+      background: #fff;
+      color: var(--accent-dark);
+      border-color: #bfd1ee;
+    }
+
+    .hero-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+
+    .hero-card strong {
+      display: block;
+      font-size: 3.6rem;
+      letter-spacing: -0.07em;
+      line-height: 1;
+      color: var(--accent);
+    }
+
+    .hero-card span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    .stats {
+      display: grid;
+      gap: 14px;
+      margin: 24px 0 0;
+    }
+
+    .stat {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fbfcff;
+    }
+
+    .stat b {
+      display: block;
+      font-size: 1.45rem;
+      line-height: 1;
+    }
+
+    .stat small {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+    }
+
+    .section {
+      margin-top: 54px;
+    }
+
+    .section-head {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .section-head p {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .rank-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .rank-card {
+      display: grid;
+      gap: 16px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: 0 8px 30px rgba(18, 24, 38, 0.05);
+    }
+
+    @media (min-width: 760px) {
+      .rank-card {
+        grid-template-columns: 64px minmax(0, 1fr) 180px;
+        align-items: center;
+      }
+    }
+
+    .rank-number {
+      display: grid;
+      width: 52px;
+      height: 52px;
+      place-items: center;
+      border-radius: 16px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: 1.2rem;
+      font-weight: 900;
+    }
+
+    .rank-main p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .metric {
+      display: grid;
+      gap: 9px;
+    }
+
+    .metric-line {
+      height: 10px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #e6ebf3;
+    }
+
+    .metric-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), #63a0ff);
+    }
+
+    .metric strong {
+      font-size: 1.35rem;
+      line-height: 1;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    @media (min-width: 820px) {
+      .grid.two {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .grid.three {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .panel {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+
+    .panel p {
+      margin: 10px 0 0;
+      color: var(--muted);
+    }
+
+    .callout {
+      padding: 24px;
+      border: 1px solid #c9d9f3;
+      border-radius: var(--radius);
+      background: var(--accent-soft);
+    }
+
+    .callout p {
+      margin: 10px 0 0;
+      color: #29476f;
+      font-size: 1.04rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      margin-bottom: 10px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .tag.red {
+      background: var(--red-soft);
+      color: var(--red);
+    }
+
+    .tag.yellow {
+      background: var(--yellow-soft);
+      color: var(--yellow);
+    }
+
+    .tag.green {
+      background: var(--green-soft);
+      color: var(--green);
+    }
+
+    .sources {
+      display: grid;
+      gap: 10px;
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sources li {
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    footer {
+      margin-top: 58px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 620px) {
+      .page {
+        width: min(100% - 22px, 1120px);
+        padding-top: 14px;
+      }
+
+      .hero {
+        padding: 24px;
+        border-radius: 24px;
+      }
+
+      .hero-card strong {
+        font-size: 3rem;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero" aria-labelledby="page-title">
+      <div>
+        <div class="eyebrow"><span class="dot" aria-hidden="true"></span>Срез обсуждений в интернете</div>
+        <h1 id="page-title">Основные причины проблем с оплатой Meta Ads</h1>
+        <p class="lead">
+          Частотный рейтинг причин <strong>payment failed</strong>, <strong>card declined</strong>,
+          <strong>billing disabled</strong> и похожих ошибок в Meta Ads. Основано на найденных
+          обсуждениях пользователей, материалах Meta Help Center и практических разборах агентств.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#ranking">Смотреть рейтинг</a>
+          <a class="button secondary" href="#methodology">Методология</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Краткая статистика">
+        <strong>66%</strong>
+        <span>материалов упоминают банк, эмитента, 3DS или антифрод как одну из причин</span>
+        <div class="stats">
+          <div class="stat">
+            <b>29</b>
+            <small>релевантных материалов в ручной выборке</small>
+          </div>
+          <div class="stat">
+            <b>25.05.2026</b>
+            <small>дата интернет-среза</small>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="ranking" aria-labelledby="ranking-title">
+      <div class="section-head">
+        <h2 id="ranking-title">Рейтинг причин по частоте</h2>
+        <p>
+          Это не официальная статистика Meta, а ручная классификация публичных обсуждений.
+          Один кейс мог попасть сразу в несколько причин: например, банк отклонил платеж из-за
+          3DS, лимита или несовпадения billing address.
+        </p>
+      </div>
+
+      <div class="rank-list">
+        <article class="rank-card">
+          <div class="rank-number">1</div>
+          <div class="rank-main">
+            <h3>Банк или эмитент отклоняет платеж</h3>
+            <p>Антифрод, международный платеж, 3DS/OTP, online/recurring block, BIN-risk, банк не пропускает Meta/Facebook Ads.</p>
+          </div>
+          <div class="metric" aria-label="19 из 29 материалов, 66 процентов">
+            <strong>19/29</strong>
+            <div class="metric-line"><div class="metric-fill" style="width: 66%;"></div></div>
+            <span>примерно 66%</span>
+          </div>
+        </article>
+
+        <article class="rank-card">
+          <div class="rank-number">2</div>
+          <div class="rank-main">
+            <h3>Недостаточно доступного лимита или денег</h3>
+            <p>Не только баланс на счете: кредитный лимит, дневной лимит, лимит на одну транзакцию, порог биллинга Meta.</p>
+          </div>
+          <div class="metric" aria-label="16 из 29 материалов, 55 процентов">
+            <strong>16/29</strong>
+            <div class="metric-line"><div class="metric-fill" style="width: 55%;"></div></div>
+            <span>примерно 55%</span>
+          </div>
+        </article>
+
+        <article class="rank-card">
+          <div class="rank-number">3</div>
+          <div class="rank-main">
+            <h3>Неверные или не совпадающие платежные данные</h3>
+            <p>Billing address, ZIP/postal code, CVV, срок действия карты, замена карты банком, имя или бизнес-данные не совпадают.</p>
+          </div>
+          <div class="metric" aria-label="15 из 29 материалов, 52 процента">
+            <strong>15/29</strong>
+            <div class="metric-line"><div class="metric-fill" style="width: 52%;"></div></div>
+            <span>примерно 52%</span>
+          </div>
+        </article>
+
+        <article class="rank-card">
+          <div class="rank-number">4</div>
+          <div class="rank-main">
+            <h3>Meta блокирует метод оплаты или аккаунт после failed payments</h3>
+            <p>Payment hold, billing disabled, account disabled, repeated retries, suspicious billing activity, один метод оплаты на слишком многих аккаунтах.</p>
+          </div>
+          <div class="metric" aria-label="12 из 29 материалов, 41 процент">
+            <strong>12/29</strong>
+            <div class="metric-line"><div class="metric-fill" style="width: 41%;"></div></div>
+            <span>примерно 41%</span>
+          </div>
+        </article>
+
+        <article class="rank-card">
+          <div class="rank-number">5</div>
+          <div class="rank-main">
+            <h3>Метод оплаты не поддерживается в стране, валюте или модели биллинга</h3>
+            <p>Country/currency mismatch, local methods only for prepaid funds, India/AmEx limitations, prepaid vs automatic billing.</p>
+          </div>
+          <div class="metric" aria-label="9 из 29 материалов, 31 процент">
+            <strong>9/29</strong>
+            <div class="metric-line"><div class="metric-fill" style="width: 31%;"></div></div>
+            <span>примерно 31%</span>
+          </div>
+        </article>
+
+        <article class="rank-card">
+          <div class="rank-number">6</div>
+          <div class="rank-main">
+            <h3>Технический сбой Meta, payment gateway или интерфейса</h3>
+            <p>Connection timeout, backend bug, браузер или устройство ломает flow, банк не видит попытки списания, саппорт вручную может провести тот же платеж.</p>
+          </div>
+          <div class="metric" aria-label="8 из 29 материалов, 28 процентов">
+            <strong>8/29</strong>
+            <div class="metric-line"><div class="metric-fill" style="width: 28%;"></div></div>
+            <span>примерно 28%</span>
+          </div>
+        </article>
+
+        <article class="rank-card">
+          <div class="rank-number">7</div>
+          <div class="rank-main">
+            <h3>Проблемы с prepaid, available funds или current balance</h3>
+            <p>Деньги на prepaid есть, но Meta продолжает тянуть current balance; auto reload не настроен; funds приходят с задержкой.</p>
+          </div>
+          <div class="metric" aria-label="5 из 29 материалов, 17 процентов">
+            <strong>5/29</strong>
+            <div class="metric-line"><div class="metric-fill" style="width: 17%;"></div></div>
+            <span>примерно 17%</span>
+          </div>
+        </article>
+
+        <article class="rank-card">
+          <div class="rank-number">8</div>
+          <div class="rank-main">
+            <h3>Переход на invoice, direct debit или credit line</h3>
+            <p>Для high-spend аккаунтов Meta может требовать monthly invoicing/direct debit; пауза возникает при пропущенном дедлайне или credit limit.</p>
+          </div>
+          <div class="metric" aria-label="3 из 29 материалов, 10 процентов">
+            <strong>3/29</strong>
+            <div class="metric-line"><div class="metric-fill" style="width: 10%;"></div></div>
+            <span>примерно 10%</span>
+          </div>
+        </article>
+
+        <article class="rank-card">
+          <div class="rank-number">9</div>
+          <div class="rank-main">
+            <h3>Tax, VAT, GST и business details</h3>
+            <p>Ошибки добавления GST/VAT, несовпадение налоговой информации, локальные требования к бизнес-данным.</p>
+          </div>
+          <div class="metric" aria-label="2 из 29 материалов, 7 процентов">
+            <strong>2/29</strong>
+            <div class="metric-line"><div class="metric-fill" style="width: 7%;"></div></div>
+            <span>примерно 7%</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="takeaways-title">
+      <div class="section-head">
+        <h2 id="takeaways-title">Что это значит на практике</h2>
+        <p>Meta часто показывает обобщенную ошибку, поэтому диагностика должна идти не от текста “payment failed”, а от цепочки возможных отказов.</p>
+      </div>
+
+      <div class="grid three">
+        <article class="panel">
+          <span class="tag red">Сначала</span>
+          <h3>Проверить банк и лимиты</h3>
+          <p>Спросить банк, был ли decline по Meta/Facebook Ads, включены ли online, international, recurring payments и прошел ли 3DS/OTP.</p>
+        </article>
+
+        <article class="panel">
+          <span class="tag yellow">Затем</span>
+          <h3>Сверить billing details</h3>
+          <p>Адрес, ZIP, имя, CVV, срок действия, страна и валюта должны совпадать с данными банка и Business Manager.</p>
+        </article>
+
+        <article class="panel">
+          <span class="tag green">После</span>
+          <h3>Не делать много retries</h3>
+          <p>Многократные попытки и “card hopping” могут усилить payment hold. Лучше один чистый retry после устранения причины.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="methodology" aria-labelledby="methodology-title">
+      <div class="callout">
+        <h2 id="methodology-title">Методология</h2>
+        <p>
+          Я считал частоту как долю найденных материалов, где причина явно называлась в тексте:
+          официальные статьи Meta, форумные обсуждения, треды Meta Developer Community, AdWiseCircle,
+          BlackHatWorld и разборы агентств/платежных провайдеров. Это не измерение всех инцидентов Meta Ads,
+          а practical read по тому, что чаще всего всплывает в публичных обсуждениях.
+        </p>
+      </div>
+
+      <div class="grid two" style="margin-top: 18px;">
+        <article class="panel">
+          <h3>Состав выборки</h3>
+          <p>6 официальных материалов Meta Help Center, 11 форумных обсуждений, 12 практических разборов агентств и платежных провайдеров.</p>
+        </article>
+
+        <article class="panel">
+          <h3>Главный вывод</h3>
+          <p>Самый частый паттерн: в Meta видно generic “payment failed”, но реальная причина находится на стороне банка, card network или risk-системы Meta.</p>
+        </article>
+      </div>
+
+      <ul class="sources" aria-label="Ключевые источники">
+        <li><a href="https://www.facebook.com/business/help/268196136699959" rel="noopener noreferrer" target="_blank">Meta Business Help Center: Fix a failed payment issue on Meta</a></li>
+        <li><a href="https://www.facebook.com/business/help/2726198024366416" rel="noopener noreferrer" target="_blank">Meta Business Help Center: Best practices for preventing payment failures</a></li>
+        <li><a href="https://www.facebook.com/business/help/132073386867900" rel="noopener noreferrer" target="_blank">Meta Business Help Center: Add a payment method to a Meta ad account</a></li>
+        <li><a href="https://agrowth.io/blogs/facebook-ads/facebook-ads-payment-failure" rel="noopener noreferrer" target="_blank">AGrowth: Guide to Facebook Ads Payment Failure</a></li>
+        <li><a href="https://communityforums.atmeta.com/discussions/Questions_Discussions/extremely-poor-meta-support-experience-%E2%80%93-ongoing-ad-payment-issue-for-months-wit/1348064" rel="noopener noreferrer" target="_blank">Meta Community Forums: ongoing ad payment issue</a></li>
+        <li><a href="https://developers.facebook.com/community/threads/689575479782716/" rel="noopener noreferrer" target="_blank">Meta Developer Community: “insufficient funds” despite available balance</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>
+        Подготовлено как публичная аналитическая страница. Не является официальной статистикой Meta
+        и не содержит внутренних данных рекламных кабинетов.
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
