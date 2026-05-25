@@ -668,6 +668,57 @@
       </div>
     </section>
 
+    <section class="section" id="card-type" aria-labelledby="card-type-title">
+      <div class="section-head">
+        <h2 id="card-type-title">Кредитная или дебетовая карта: есть ли разница?</h2>
+        <p>
+          Да, тип карты имеет значение. Для Meta важен не только баланс, а доступный лимит, доверие к банку/BIN,
+          поддержка 3DS, recurring payments и то, насколько карта выглядит стабильной для рекламных списаний.
+        </p>
+      </div>
+
+      <div class="grid three">
+        <article class="panel">
+          <span class="tag green">Лучше</span>
+          <h3>Кредитная карта</h3>
+          <p>
+            Обычно стабильнее для Meta Ads: есть отдельный кредитный лимит, выше шанс пройти threshold charge,
+            меньше зависимость от текущего остатка на счете. Особенно хорошо работает банковская или корпоративная
+            кредитка с нормальным 3DS и разрешенными international / online / recurring payments.
+          </p>
+        </article>
+
+        <article class="panel">
+          <span class="tag yellow">Нормально, но проверить</span>
+          <h3>Дебетовая карта</h3>
+          <p>
+            Может работать, но чаще упирается в фактический available balance, дневной лимит, лимит на одну
+            онлайн-транзакцию, запрет recurring/international payments или pending holds. В банке нужно отдельно
+            проверить, что рекламные списания Meta разрешены.
+          </p>
+        </article>
+
+        <article class="panel">
+          <span class="tag red">Рискованнее</span>
+          <h3>VCC / prepaid</h3>
+          <p>
+            У media buyers такие карты популярны, но Meta чаще флагует saturated BIN, prepaid/VCC marker,
+            отсутствие стабильного 3DS, GEO mismatch и повторное использование карты на разных аккаунтах.
+            Использовать стоит только если понятны BIN, страна, 3DS и история провайдера.
+          </p>
+        </article>
+      </div>
+
+      <div class="callout" style="margin-top: 18px;">
+        <h3>Практический приоритет</h3>
+        <p>
+          Оптимальный порядок: корпоративная или обычная банковская кредитка → банковская дебетовая карта с
+          высокими лимитами и включенными online/international/recurring payments → PayPal/direct debit/monthly
+          invoice, если доступны → VCC/prepaid только для сетапов, где контролируются BIN, GEO и 3DS.
+        </p>
+      </div>
+    </section>
+
     <section class="section" id="diagnostics" aria-labelledby="diagnostics-title">
       <div class="section-head">
         <h2 id="diagnostics-title">Пошаговая диагностика: с чего начинать</h2>
